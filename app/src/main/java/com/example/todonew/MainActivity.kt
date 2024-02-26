@@ -65,6 +65,7 @@ fun App() {
             AddTodoScreen(
                 editableDescription = editableDescription ?: "",
                 index = index,
+
                 onAddTodo = { description ->
                 println("Adding todo with description: $description")
             })
