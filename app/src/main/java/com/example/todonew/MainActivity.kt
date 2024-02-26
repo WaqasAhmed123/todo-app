@@ -59,9 +59,12 @@ fun App() {
                 type = NavType.IntType // Assuming index is an integer
             }
         )) {
+            val editableDescription=it.arguments!!.getString("editableDescription")
+            val index=it.arguments!!.getInt("index")
+
             AddTodoScreen(
-//                editableDescription = editableDescription ?: "",
-//                index = index,
+                editableDescription = editableDescription ?: "",
+                index = index,
                 onAddTodo = { description ->
                 println("Adding todo with description: $description")
             })
