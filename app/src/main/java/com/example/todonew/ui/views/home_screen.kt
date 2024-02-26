@@ -1,4 +1,3 @@
-
 import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,7 +28,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-
 
 
 @Composable
@@ -72,7 +70,7 @@ fun displayList(navController: NavController) {
 
             // on below line we are populating
             // items for listview.
-            itemsIndexed(tasks) { index,task ->
+            itemsIndexed(tasks) { index, task ->
                 // on below line we are specifying ui for each item of list view.
                 // we are specifying a simple text for each item of our list view.
                 Row(
@@ -89,7 +87,7 @@ fun displayList(navController: NavController) {
                         onClick = {
                             Log.d("AddTodoScreen", "Task: $task, Index: $index")
                             navController.navigate("add_todo/${task}/${index}")
-                                  },
+                        },
                         modifier = Modifier.padding(8.dp)
                     ) {
                         Icon(
@@ -100,7 +98,7 @@ fun displayList(navController: NavController) {
                     }
 
                     IconButton(
-                        onClick = { tasks.removeAt(index)},
+                        onClick = { tasks.removeAt(index) },
                         modifier = Modifier.padding(8.dp)
                     ) {
                         Icon(
@@ -130,7 +128,7 @@ fun addTask(navController: NavController) {
     ) {
         FloatingActionButton(
 
-            onClick = {navController.navigate("add_todo")  },
+            onClick = { navController.navigate("add_todo") },
         )
         {
             Icon(Icons.Filled.Add, "Floating action button.")
