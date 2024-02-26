@@ -86,7 +86,7 @@ fun displayList(navController: NavController) {
                     IconButton(
                         onClick = {
                             Log.d("AddTodoScreen", "Task: $task, Index: $index")
-                            navController.navigate("add_todo/${task}/${index}")
+                            navController.navigate("add_todo?editableDescription=${task}&index=${index}")
                         },
                         modifier = Modifier.padding(8.dp)
                     ) {

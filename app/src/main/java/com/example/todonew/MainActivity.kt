@@ -16,6 +16,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.todonew.ui.theme.TodoNewTheme
+import tasks
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,12 +52,14 @@ fun App() {
         composable(route = "home_screen") {
             HomeScreen(navController)
         }
-        composable(route = "add_todo/{editableDescription}/{index}", arguments = listOf(
+        composable(route = "add_todo?editableDescription={editableDescription}&index={index}", arguments = listOf(
             navArgument(name = "editableDescription") {
                 type = NavType.StringType
+                defaultValue=""
             },
             navArgument(name = "index") {
-                type = NavType.IntType // Assuming index is an integer
+                type = NavType.IntType
+            defaultValue=tasks.size-1// Assuming index is an integer
             }
         )) {
             val editableDescription=it.arguments!!.getString("editableDescription")
